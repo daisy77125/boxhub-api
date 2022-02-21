@@ -8,7 +8,7 @@ const {
 const router = require("express").Router();
 
 router.get("/", async (req, res) => {
-  const orders = await Order.find();
+  const orders = await Order.find().select("-_id -__v");
   res.send(orders);
 });
 
