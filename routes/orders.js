@@ -42,4 +42,9 @@ router.put("/:id", async (req, res) => {
   res.send(order);
 });
 
+router.delete("/", async (req, res) => {
+  const result = await Order.find().deleteMany({});
+  res.send(result);
+});
+
 module.exports = router;
